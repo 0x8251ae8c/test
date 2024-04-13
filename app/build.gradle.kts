@@ -2,7 +2,7 @@ plugins {
     application
     id("java")
     checkstyle
-    jacoco
+    id("jacoco")
 }
 
 group = "hexlet.code"
@@ -31,9 +31,6 @@ tasks.test {
 
 tasks.jacocoTestReport {
     dependsOn(tasks.test) // tests are required to run before generating the report
-}
-
-jacocoTestReport {
     reports {
         xml.required = true
     }
